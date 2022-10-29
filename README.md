@@ -35,4 +35,4 @@ USE CASES:
 
 Visualize electrostatic fields by defining configurations of point charges
 
-Calculate work done when moving around a gravitational field
+Calculate work done when moving around a gravitational field by integrating along custom paths through the field
