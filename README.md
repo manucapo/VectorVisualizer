@@ -30,3 +30,9 @@ Define and visualize vector fields based on configurations of point sinks/source
 Integrate vector fields along custom lines/polygons
 
 Trace vector field flow lines
+
+USE CASES:
+
+Visualize electrostatic fields by defining configurations of point charges
+
+Calculate work done when moving around a gravitational field
