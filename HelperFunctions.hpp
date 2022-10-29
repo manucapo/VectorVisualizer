@@ -1,13 +1,4 @@
-//
-//  HelperFunctions.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 25.06.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-#ifndef HelperFunctions_hpp
-#define HelperFunctions_hpp
+#pragma once
 
 
 #include <iostream>
@@ -34,8 +25,6 @@
 Evaluator *Evaluator::instancePtr = 0; // SINGLETON INSTANCE POINTER INIT.
 
 void CreateParticle(Particle *tempParticle,shared_ptr<World> world, double charge, double forceConstant, double decayExponent, double x, double y);
-void CreateCustomParticle(string *inputString,float *userInputFloat, Particle *tempParticle,shared_ptr<World> world);
-void CreateCustomLine(string* inputString, float* userInputFloat, Line* tempLine, shared_ptr<World> world);
 void SFMLSetUp(Point worldArray[], Vector2 fieldArray[],vector<Particle> particleVector,vector<Line> lineVector, bool normalizeFieldDisplay, int scale , float vectorScale);
 float RemapFloatRange(float value, float from1, float to1, float from2, float to2);
 
@@ -46,98 +35,6 @@ void CreateParticle(Particle *tempParticle,shared_ptr<World> world, double charg
     tempParticle->setX(x);
     tempParticle->setY(y);
     world->particleVector.push_back(*tempParticle);     // push particle to world
-}
-
-void CreateCustomParticle(string *inputString,float *userInputFloat, Particle *tempParticle,shared_ptr<World> world){ //Create particle asking user for input
-    cout << "Enter particle X postion : \n" << endl;
-    getline(cin,*inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    tempParticle->setX(*userInputFloat);
-    cout << "Enter particle Y postion : \n" << endl;
-    getline(cin,*inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    tempParticle->setY(*userInputFloat);
-    cout << "Enter particle force constant : \n" << endl;
-    getline(cin,*inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    tempParticle->setForceConstant(*userInputFloat);
-    cout << "Enter particle charge : \n" << endl;
-    getline(cin,*inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    tempParticle->setCharge(*userInputFloat);
-    cout << "Enter particle decay exponent : \n" << endl;
-    getline(cin,*inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    tempParticle->setDecayExponent(*userInputFloat);
-    world->particleVector.push_back(*tempParticle); // push particle to world
-}
-
-void CreateCustomLine(string* inputString, float* userInputFloat, Line* tempLine, shared_ptr<World> world) {  //Create line asking user for input
-    cout << "Enter Desired amount of line segments: " << endl;
-    getline(cin, *inputString);
-    stringstream(*inputString) >> *userInputFloat;
-    int lineSegmentAmount = *userInputFloat;
-    if (lineSegmentAmount > 0)
-    {
-        Line line;
-        for (int i = 0; i < lineSegmentAmount; i++)
-        {
-
-            Point start;
-            if (i == 0)
-            {
-                cout << "LINE SEGMENT " << i << " START :" << endl;
-                cout << "Enter Desired start point X coordinate : " << endl;
-                getline(cin, *inputString);
-                stringstream(*inputString) >> *userInputFloat;
-                start.setX(*userInputFloat);
-                cout << "Enter Desired start point Y coordinate : " << endl;
-                getline(cin, *inputString);
-                stringstream(*inputString) >> *userInputFloat;
-                start.setY(*userInputFloat);
-            }
-            else
-            {
-                start.setX(line.getTail().getX());
-                start.setY(line.getTail().getY());
-            }
-            cout << "LINE SEGMENT " << i << " END :" << endl;
-            Point end;
-            cout << "Enter Desired end point X coordinate : " << endl;
-            getline(cin, *inputString);
-            stringstream(*inputString) >> *userInputFloat;
-            end.setX(*userInputFloat);
-            cout << "Enter Desired end point Y coordinate : " << endl;
-            getline(cin, *inputString);
-            stringstream(*inputString) >> *userInputFloat;
-            end.setY(*userInputFloat);
-
-            line.addSegment(start, end);
-        }
-        world->lineVector.push_back(line);
-    }
-}
-
-void CreateCustomTrace(string* inputString, float* userInputFloat, Trace* tracePtr, shared_ptr<World> world) {  //Create trace asking user for input
-
-        Trace trace;
-        double xCoord;
-        double yCoord;
-                cout << "CREATING TRACE : " << endl;
-                cout << "Enter Desired start point X coordinate : " << endl;
-                getline(cin, *inputString);
-                stringstream(*inputString) >> *userInputFloat;
-                xCoord = *userInputFloat;
-                cout << "Enter Desired start point Y coordinate : " << endl;
-                getline(cin, *inputString);
-                stringstream(*inputString) >> *userInputFloat;
-                yCoord = *userInputFloat;
-
-                trace.SetStart(xCoord, yCoord);
-                trace.CreateTrace(world->particleVector);
-
-        world->traceVector.push_back(trace);
-    
 }
 
 void SFMLSetUp(Point worldArray[], Vector2 fieldArray[],vector<Particle> particleVector,vector<Line> lineVector, vector<Trace> traceVector, bool normalizeFieldDisplay, int scale, float vectorScale){
@@ -379,5 +276,3 @@ inline float RemapFloatRange(float value, float from1, float to1, float from2, f
 {
     return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 }
-
-#endif /* HelperFunctions_hpp */

@@ -1,10 +1,4 @@
-//
-//  Point.cpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 09.03.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
+
 
 #include "Point.hpp"
 

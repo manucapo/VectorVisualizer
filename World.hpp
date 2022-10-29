@@ -1,13 +1,4 @@
-//
-//  World.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 12.06.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-#ifndef World_hpp
-#define World_hpp
+#pragma once
 
 #include <stdio.h>
 
@@ -39,5 +30,3 @@ public:
     
 };
 
-
-#endif /* World_hpp */

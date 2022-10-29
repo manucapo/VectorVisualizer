@@ -1,17 +1,4 @@
-//
-//  Evaluator.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 12.06.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-// SINGLETON
-
-#ifndef Evaluator_hpp
-#define Evaluator_hpp
-
-
+#pragma once
 
 #define exprtk_disable_comments            // Test defines to compile faster ( must test compile time)
 #define exprtk_disable_break_continue
@@ -130,10 +117,3 @@ public:
     
     ~Evaluator();
 };
-
-
-
-
-
-#endif /* Evaluator_hpp */
-

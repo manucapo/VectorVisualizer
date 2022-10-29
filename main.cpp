@@ -1,4 +1,5 @@
 #include "HelperFunctions.hpp"
+#include "UIFunctions.hpp"
 
 using namespace std;
 
