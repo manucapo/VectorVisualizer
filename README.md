@@ -25,14 +25,14 @@ CURRENT FEATURES:
 
 Define and visualize custom vector fields based on algebraic mathematical expressions.
 
-Define and visualize vector fields based on configurations of point sinks/sources
+Define and visualize vector fields based on configurations of point sinks/sources.
 
-Integrate vector fields along custom lines/polygons
+Integrate vector fields along custom lines/polygons.
 
 Trace vector field flow lines
 
 USE CASES:
 
-Visualize electrostatic fields by defining configurations of point charges
+Visualize electrostatic fields by defining configurations of point charges.
 
-Calculate work done when moving around a gravitational field by integrating along custom paths through the field
+Calculate work done when moving around a gravitational field by integrating along custom paths through the field.
