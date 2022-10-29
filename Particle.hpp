@@ -1,15 +1,4 @@
-//
-//  Particle.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 21.06.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-
-
-#ifndef Particle_hpp
-#define Particle_hpp
+#pragma once
 
 #include <stdio.h>
 #include <iostream>
@@ -83,4 +72,3 @@ public:
 
 };
 
-#endif /* Particle_hpp */

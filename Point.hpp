@@ -3,12 +3,7 @@
 //  SeminarProjectManu
 //
 //  Created by Manuel Telleria on 09.03.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-
-#ifndef Point_hpp
-#define Point_hpp
+#pragma once
 
 #include <math.h>
 
@@ -45,8 +40,4 @@ public:
     
     
 };
-
-
-
-#endif /* Point_hpp */
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef Integrator_hpp
-#define Integrator_hpp
-
 #include "Line.hpp"
 #include "Particle.hpp"
 #include "Evaluator.hpp"
@@ -64,5 +61,3 @@ public:
 	Integrator();
 	~Integrator();
 };
-
-#endif

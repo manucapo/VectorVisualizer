@@ -1,13 +1,4 @@
-//
-//  Vector2.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 09.03.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-#ifndef Vector2_hpp
-#define Vector2_hpp
+#pragma once
 
 #include <math.h>
 
@@ -102,6 +93,3 @@ public:
     Vector2();
     ~Vector2();
 };
-
-#endif /* Vector2_hpp */
-

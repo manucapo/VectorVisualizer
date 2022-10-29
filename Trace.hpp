@@ -1,6 +1,4 @@
 #pragma once
-#ifndef Trace_hpp
-#define Trace_hpp
 
 #include "Point.hpp"
 #include "Vector2.hpp"
@@ -92,4 +90,3 @@ public:
 	~Trace();
 };
 
-#endif

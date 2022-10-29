@@ -1,9 +1,5 @@
 #pragma once
 
-
-#ifndef Line_hpp
-#define Line_hpp
-
 #include <vector>
 #include "Point.hpp"
 #include "Vector2.hpp"
@@ -43,8 +39,3 @@ public:
 	Line();
 	~Line();
 };
-
-
-
-
-#endif

@@ -1,13 +1,4 @@
-//
-//  HelperFunctions.hpp
-//  SeminarProjectManu
-//
-//  Created by Manuel Telleria on 25.06.18.
-//  Copyright © 2018 Manuel Telleria. All rights reserved.
-//
-
-#ifndef HelperFunctions_hpp
-#define HelperFunctions_hpp
+#pragma once
 
 
 #include <iostream>
@@ -379,5 +370,3 @@ inline float RemapFloatRange(float value, float from1, float to1, float from2, f
 {
     return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 }
-
-#endif /* HelperFunctions_hpp */
