@@ -1,5 +1,5 @@
 # VectorVisualizer
-A lean unitless vector algebra and analysis visualization tool
+A lean vector algebra and analysis visualization tool
 
 DEPENDENCIES:
 
