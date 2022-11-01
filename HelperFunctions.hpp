@@ -17,7 +17,7 @@
 #include "Trace.hpp"
 
 
-#define WORLDSIZE 800       // defines default render window size in pixels.
+#define WORLDSIZE 1000       // defines default render window size in pixels.
 #define SCALE 40    // defines default amount of pixesl per unit.
 #define VECTORMULTIPLIER 1  // defines default vector magnitude scaling.
 #define PARTICLESHAPERADIUS 0.2f // defines the radius of the cirlce shapes corresponding to particles

@@ -9,7 +9,7 @@
 
 
 #define DELTA 0.01
-#define RANGE 20 
+#define RANGE 40 
 
 class Trace
 {

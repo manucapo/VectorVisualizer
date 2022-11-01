@@ -24,6 +24,7 @@ int main(int argc, char const** argv)
     Line localLine;                                             
     Trace localTrace;
         
+
     cout << "WELCOME !!! \n" << endl;
     cout << "1. EXIT PROGRAM \n" << endl;
     cout << "2. DISPLAY OPTIONS \n" << endl;
@@ -206,19 +207,22 @@ int main(int argc, char const** argv)
                 cout << "2. Quadropole. \n" << endl;
                 cout << "3. Long line charge. \n" << endl;
                 cout << "4. Short line charge. \n" << endl;
+                cout << "5. Long Plate capacitor. \n" << endl;
+                cout << "6. Short Plate capacitor. \n" << endl;
+                cout << "7. Ring Charge. \n" << endl;
                 getline(cin,userInputString);
                 stringstream(userInputString) >> userInputInteger;
                 switch (userInputInteger) {                                      // Particle template sub sub menu switch statement
                   case 1:
-                    CreateParticle(&localParticle, world, 1, 1, 2, 0, 1);        // Create a particle withouth user input.
-                    CreateParticle(&localParticle, world, -1, 1, 2, 0, -1);
+                    CreateParticle(&localParticle, world, 1, 1, 2, 0, 4);        // Create a particle withouth user input.
+                    CreateParticle(&localParticle, world, -1, 1, 2, 0, -4);
                     cout << " \n Dipole created \n" << endl;
                     break;
                   case 2:
-                    CreateParticle(&localParticle, world, 1, 1, 2, 1, 1);
-                    CreateParticle(&localParticle, world, 1, 1, 2, -1, -1);
-                    CreateParticle(&localParticle, world, -1, 1, 2, -1, 1);
-                    CreateParticle(&localParticle, world, -1, 1, 2, 1, -1);
+                    CreateParticle(&localParticle, world, 1, 1, 2, 2, 2);
+                    CreateParticle(&localParticle, world, 1, 1, 2, -2, -2);
+                    CreateParticle(&localParticle, world, -1, 1, 2, -2, 2);
+                    CreateParticle(&localParticle, world, -1, 1, 2, 2, -2);
                     cout << " \n Quadropole created \n" << endl;
                     break;
                   case 3:
@@ -239,6 +243,35 @@ int main(int argc, char const** argv)
                     }
                     cout << " \n Short line charge created \n" << endl;
                     break;
+                  case 5:
+                      for (i = 0; i < (WORLDSIZE / pixelsPerUnit) * 2;i++) {            // Creates two vertical line of particles 
+                          CreateParticle(&localParticle, world, 2, 1, 2, 4, i);
+                          CreateParticle(&localParticle, world, -2, 1, 2, -4, i);
+                          if (i > 0) {                                                // Avoids placing a double charge at the origin.
+                              CreateParticle(&localParticle, world, 2, 1, 2, 4, -i);
+                              CreateParticle(&localParticle, world, -2, 1, 2, -4, -i);
+                          }
+                      }
+                      cout << " \n Long plate capacitor created \n" << endl;
+                    break;
+                  case 6:
+                      for (i = 0; i < (WORLDSIZE / pixelsPerUnit) / 4;i++) {            // Creates two vertical line of particles 
+                          CreateParticle(&localParticle, world, 2, 1, 2, 4, i);
+                          CreateParticle(&localParticle, world, -2, 1, 2, -4, i);
+                          if (i > 0) {                                                // Avoids placing a double charge at the origin.
+                              CreateParticle(&localParticle, world, 2, 1, 2, 4, -i);
+                              CreateParticle(&localParticle, world, -2, 1, 2, -4, -i);
+                          }
+                      }
+                      cout << " \n Short plate capacitor created \n" << endl;
+                    break;
+                  case 7: 
+                      for (double angle = 0; angle < 2 * pi ;angle += pi / 40) {            // Creates a ring of charges 
+                          CreateParticle(&localParticle, world, 2, 1, 2, 4 * cos(angle), 4 * sin(angle));
+                      }
+                      cout << " \n Ring charge created \n" << endl;
+                    break;
+
                   default:
                     break;
                 }
